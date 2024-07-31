@@ -1,0 +1,28 @@
+name: Create chocolately package
+
+on:
+  release:
+    types: [published]
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Choco pack
+        uses: crazy-max/ghaction-chocolatey@v3
+        with:
+          args: pack
+
+      - name: Upload Artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            *.nupkg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
