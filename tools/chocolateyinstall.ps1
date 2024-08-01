@@ -10,7 +10,7 @@ $packageArgs = @{
 
   softwareName  = 'AxonOpsWorkbench*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
 
-  checksum64    = '%SHA_AMD%'
+  checksum64    = '4a66683e69e5d8a6cfe2ee13044e4e29a49d24c06dbbf65432e1d0dfb5aaf50a'
   checksumType64= 'sha256'
 
   # MSI
