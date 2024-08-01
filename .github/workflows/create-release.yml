@@ -7,7 +7,7 @@ on:
 name: Create Release
 
 jobs:
-  build:
+  release:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
@@ -27,3 +27,23 @@ jobs:
             https://github.com/axonops/axonops-workbench-cassandra/releases/tag/${{ github.ref }}
           draft: false
           prerelease: true
+  choco:
+    runs-on: windows-latest
+    needs: [release]
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Choco pack
+        uses: crazy-max/ghaction-chocolatey@v3
+        with:
+          args: pack
+
+      - name: Upload Artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            *.nupkg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
