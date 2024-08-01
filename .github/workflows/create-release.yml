@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -25,4 +26,4 @@ jobs:
             AxonOps Workbench new release. See
             https://github.com/axonops/axonops-workbench-cassandra/releases/tag/${{ github.ref }}
           draft: false
-          prerelease: false
+          prerelease: true
