@@ -1,0 +1,63 @@
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - '*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+name: Create Release
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            AxonOps Workbench new release. See
+            https://github.com/axonops/axonops-workbench-cassandra/releases/tag/${GITHUB_REF_NAME}
+          draft: false
+          prerelease: true
+  choco:
+    name: Create Chocolately package
+    runs-on: windows-latest
+    needs: [release]
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+
+      -
+        name: Choco pack
+        uses: crazy-max/ghaction-chocolatey@v3
+        with:
+          args: pack
+
+      - name: Upload Artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            *.nupkg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '3.1.x' # No change it
+          source-url: https://nuget.pkg.github.com/axonops/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Publish the package to GPR
+        run: dotnet nuget push "*.nupkg"
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
