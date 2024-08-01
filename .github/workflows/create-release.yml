@@ -28,6 +28,7 @@ jobs:
           draft: false
           prerelease: true
   choco:
+    name: Create Chocolately package
     runs-on: windows-latest
     needs: [release]
     steps:
