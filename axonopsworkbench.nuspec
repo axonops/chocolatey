@@ -7,15 +7,13 @@
     <title>AxonOps Workbench (Install)</title>
     <authors>info@axonops.com</authors>
     <projectUrl>https://github.com/axonops/axonops-workbench-cassandra</projectUrl>
-    <iconUrl>https://axonops.com/wp-content/uploads/2022/12/Copy-of-AxonopsDigitalMaster_AxonopsFullLogoWhite.svg</iconUrl>
+    <icon>axonops-icon-256x256.ico</icon>
     <copyright>2024 AxonOps Limited</copyright>
-    <!-- If there is a license Url available, it is required for the community feed -->
-    <!-- <licenseUrl>Software License Location __REMOVE_OR_FILL_OUT__</licenseUrl> -->
+    <license type="file">LICENSE</license>
+    <readme>README.md</readme>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/axonops/axonops-workbench-cassandra</projectSourceUrl>
-    <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
-    <!--<mailingListUrl></mailingListUrl>-->
-    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <docsUrl>https://docs.axonops.com</docsUrl>
     <tags>axonopsworkbench cassandra workbench kafka axonops</tags>
     <summary>AxonOps Workbench</summary>
     <description>The AxonOps Workbench enables developers and DBA to connect to their Apache Cassandra clusters from their desktops</description>
