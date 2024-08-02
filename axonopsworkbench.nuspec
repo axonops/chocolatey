@@ -13,7 +13,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/axonops/axonops-workbench-cassandra</projectSourceUrl>
     <docsUrl>https://docs.axonops.com</docsUrl>
-    <tags>axonopsworkbench cassandra workbench kafka axonops</tags>
+    <tags>axonopsworkbench cassandra workbench kafka axonops development dba</tags>
     <summary>AxonOps Workbench</summary>
     <description>The AxonOps Workbench enables developers and DBA to connect to their Apache Cassandra clusters from their desktops</description>
   </metadata>
