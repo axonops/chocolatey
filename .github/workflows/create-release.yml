@@ -67,10 +67,12 @@ jobs:
       # - name: Publish the package to GPR
       #   run: dotnet nuget push "*.nupkg" -k ${{ secrets.NUGET_API_KEY }}
 
-      - name: Install Chocolatey
+      - name: Choco login
         uses: crazy-max/ghaction-chocolatey@v3
         with:
-          args: install
+          args: apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+        env:
+          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
 
       - name: Get package name
         run: |
@@ -78,6 +80,10 @@ jobs:
           echo "AXON_PKG=$P" >> $env:GITHUB_ENV
         shell: pwsh
 
-      - name: Push Chocolatey Package
-        run: |
-          choco push ${{ github.AXON_PKG }} --source https://push.chocolatey.org/ --api-key ${{ secrets.CHOCO_API_KEY }}
+
+      - name: Choco push
+        uses: crazy-max/ghaction-chocolatey@v3
+        with:
+          args: push ${{ github.AXON_PKG }} --source https://push.chocolatey.org/ --api-key ${{ secrets.CHOCO_API_KEY }}
+        env:
+          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
