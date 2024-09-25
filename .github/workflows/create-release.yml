@@ -74,9 +74,16 @@ jobs:
         env:
           CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
 
+      - name: Get package name
+        run: |
+          $P = Get-ChildItem -Filter *.nupkg | Select-Object -ExpandProperty Name
+          echo "AXON_PKG=$P" >> $env:GITHUB_ENV
+        shell: pwsh
+
+
       - name: Choco push
         uses: crazy-max/ghaction-chocolatey@v3
         with:
-          args: push "*.nupkg" --source https://push.chocolatey.org/
+          args: push ${{ github.AXON_PKG }} --source https://push.chocolatey.org/
         env:
           CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
