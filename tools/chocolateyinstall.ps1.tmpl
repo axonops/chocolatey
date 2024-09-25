@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop' # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64      = 'https://github.com/axonops/axonops-workbench-cassandra/releases/download/v%VERSION%/AxonOps.Workbench-%VERSION%-win-x64.exe'
+$url64      = 'https://github.com/axonops/axonops-workbench-cassandra/releases/download/v%VERSION%/AxonOps.Workbench-%VERSION%-win-x64.msi'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
@@ -14,7 +14,7 @@ $packageArgs = @{
   checksumType64= 'sha256'
 
   # MSI
-  silentArgs   = '/s'           # InstallShield
+  silentArgs   = '/quiet'
 }
 
 Install-ChocolateyPackage @packageArgs
