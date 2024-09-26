@@ -14,7 +14,7 @@ $packageArgs = @{
   checksumType64= 'sha256'
 
   # MSI
-  silentArgs   = '/quiet'
+  silentArgs   = '/quiet /norestart'
 }
 
 Install-ChocolateyPackage @packageArgs
