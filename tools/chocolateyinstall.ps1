@@ -5,12 +5,12 @@ $url64      = 'https://github.com/axonops/axonops-workbench-cassandra/releases/d
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   unzipLocation = $toolsDir
-  fileType      = 'EXE'
+  fileType      = 'MSI'
   url64bit      = $url64
 
   softwareName  = 'AxonOpsWorkbench*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
 
-  checksum64    = '4a19f990a4cd4a9dcaa6cbbeb8675580b77ac4ebb632353cb370300534cef37d'
+  checksum64    = 'f8795f72ad99d3c993f1c32a9396f548f82605c7e5fc2d5fbc51c9a19b9eb7e1'
   checksumType64= 'sha256'
 
   # MSI

@@ -5,7 +5,7 @@ $url64      = 'https://github.com/axonops/axonops-workbench-cassandra/releases/d
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   unzipLocation = $toolsDir
-  fileType      = 'EXE'
+  fileType      = 'MSI'
   url64bit      = $url64
 
   softwareName  = 'AxonOpsWorkbench*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
@@ -14,7 +14,7 @@ $packageArgs = @{
   checksumType64= 'sha256'
 
   # MSI
-  silentArgs   = '/quiet'
+  silentArgs   = '/quiet /norestart'
 }
 
 Install-ChocolateyPackage @packageArgs
