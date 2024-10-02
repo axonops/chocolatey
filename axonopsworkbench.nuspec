@@ -6,12 +6,12 @@
     <owners>AxonOps Limited</owners>
     <title>AxonOps Workbench (Install)</title>
     <authors>AxonOps Limited</authors>
-    <projectUrl>https://github.com/axonops/axonops-workbench-cassandra</projectUrl>
+    <projectUrl>https://github.com/axonops/axonops-workbench</projectUrl>
     <iconUrl>https://axonops.com/wp-content/uploads/2022/12/Copy-of-AxonopsDigitalMaster_AxonopsFullLogoWhite.svg</iconUrl>
     <copyright>2024 AxonOps Limited</copyright>
     <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/axonops/axonops-workbench-cassandra</projectSourceUrl>
+    <projectSourceUrl>https://github.com/axonops/axonops-workbench</projectSourceUrl>
     <docsUrl>https://docs.axonops.com</docsUrl>
     <tags>axonopsworkbench cassandra workbench kafka axonops development dba</tags>
     <summary>AxonOps Workbench</summary>
