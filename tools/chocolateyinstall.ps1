@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop' # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64      = 'https://github.com/axonops/axonops-workbench/releases/download/v1.0.0-beta5/AxonOps.Workbench-1.0.0-beta5-win-x64.msi'
+$url64      = 'https://github.com/axonops/axonops-workbench/releases/download/v1.0.0-beta6/AxonOps.Workbench-1.0.0-beta6-win-x64.msi'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
@@ -10,7 +10,7 @@ $packageArgs = @{
 
   softwareName  = 'AxonOpsWorkbench*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
 
-  checksum64    = 'f4f9d469fb2d8dde44092745dcea8dbcdf3160d7d1f09d1f4297fa02c60f32c4'
+  checksum64    = '6ad5d7237d75ca1072a63470e2613f6bdae14e582911fce8b9593e310cf6e528'
   checksumType64= 'sha256'
 
   # MSI
