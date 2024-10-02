@@ -24,7 +24,7 @@ jobs:
           release_name: Release ${{ github.ref }}
           body: |
             AxonOps Workbench new release. See
-            https://github.com/axonops/axonops-workbench-cassandra/releases/tag/${{ github.ref_name }}
+            https://github.com/axonops/axonops-workbench/releases/tag/${{ github.ref_name }}
           draft: false
           prerelease: true
   choco:

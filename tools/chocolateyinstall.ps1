@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop' # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64      = 'https://github.com/axonops/axonops-workbench-cassandra/releases/download/v0.1.0/AxonOps.Workbench-0.1.0-win-x64.msi'
+$url64      = 'https://github.com/axonops/axonops-workbench/releases/download/v0.1.0/AxonOps.Workbench-0.1.0-win-x64.msi'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
