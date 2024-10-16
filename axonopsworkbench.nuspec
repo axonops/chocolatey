@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>axonopsworkbench</id>
-    <version>0.1.1-internal-20241014-01</version>
+    <version>0.1.1-internal-20241016-01</version>
     <owners>AxonOps Limited</owners>
     <title>AxonOps Workbench (Install)</title>
     <authors>AxonOps Limited</authors>
